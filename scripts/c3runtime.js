@@ -4245,7 +4245,7 @@ self.C3_ExpressionFuncs = [
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => f0();
 		},
-		() => 1000,
+		() => 500,
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => f0(0);
