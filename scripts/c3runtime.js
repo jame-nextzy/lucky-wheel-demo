@@ -4135,6 +4135,8 @@ self.C3_JsPropNameTable = [
 	{Text: 0},
 	{wheelbase: 0},
 	{Particles: 0},
+	{curvedownarrow: 0},
+	{rightdrawnarrow: 0},
 	{isSpinning: 0}
 ];
 }
@@ -4245,12 +4247,13 @@ self.C3_ExpressionFuncs = [
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => f0();
 		},
-		() => 500,
+		() => 250,
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => f0(0);
 		},
-		() => 90,
+		() => 45,
+		() => 135,
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => (f0(200) + 300);
@@ -4258,7 +4261,7 @@ self.C3_ExpressionFuncs = [
 		() => -75,
 		p => {
 			const n0 = p._GetNode(0);
-			return () => (Math.floor(((n0.ExpObject() / 30) - 1)) % 2);
+			return () => (Math.floor((n0.ExpObject() / 30)) % 2);
 		}
 ];
 
