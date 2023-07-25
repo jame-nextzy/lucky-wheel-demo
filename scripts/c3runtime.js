@@ -4114,8 +4114,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Particles.Acts.SetVisible,
 		C3.Plugins.Sprite.Acts.SetVisible,
 		C3.Behaviors.Rotate.Acts.SetSpeed,
-		C3.Plugins.System.Exps.max,
-		C3.Plugins.Touch.Exps.SpeedAt,
+		C3.Plugins.System.Exps.random,
 		C3.Behaviors.Rotate.Acts.SetAcceleration,
 		C3.Plugins.System.Cnds.Else,
 		C3.Plugins.Sprite.Acts.SetAnimFrame,
@@ -4246,7 +4245,7 @@ self.C3_ExpressionFuncs = [
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => f0();
 		},
-		() => 2000,
+		() => 1000,
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => f0(0);
@@ -4254,10 +4253,9 @@ self.C3_ExpressionFuncs = [
 		() => 90,
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
-			const f1 = p._GetNode(1).GetBoundMethod();
-			return () => f0(500, (f1(0) / 10));
+			return () => (f0(200) + 300);
 		},
-		() => -50,
+		() => -75,
 		p => {
 			const n0 = p._GetNode(0);
 			return () => (Math.floor(((n0.ExpObject() / 30) - 1)) % 2);
